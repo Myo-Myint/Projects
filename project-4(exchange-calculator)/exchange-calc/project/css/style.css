@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&display=swap');
+:root{
+    --primary : #2CD1EE;
+    --primary-soft: rgba(21, 145, 167, 0.75);
+    --secondary-dark: #535050;
+    --secondary : #707070;
+    --secondary-soft: #f2f2f2 ;
+    --light : #ffffff;
+    --dark :#3a3b3c                               ;
+    --br: 5px;
+}
+@font-face {
+    font-family: "mm";
+    font-weight: normal;
+    src: url("../fonts/MyanmarSagar.ttf");
+}
+
+.mm{
+    font-family: "mm", serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+select::-ms-expand {	display: none; }
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+@-moz-document url-prefix(){
+    select { width: 110%; background-position: right 30px center !important; border: none !important;}
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat',"mm", sans-serif;
+    color: var(--secondary);
+}
+body{
+    transition: 0.5s;
+    scroll-behavior: smooth;
+}
+.divider{
+    background-color: var(--secondary);
+    height: 5px;
+    border-radius: var(--br);
+}
+.app{
+   width: 800px;
+    margin: 50px auto;
+}
+.output{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand-container{
+    display: flex;
+    align-items: center;
+
+}
+.logo{
+    width: 50px;
+}
+.brand{
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.result-container{
+    display: flex;
+    align-items: center;
+}
+.result{
+    font-size: 50px;
+    font-weight: 600;
+
+}
+.calc{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.container{
+    width: 170px;
+}
+.input,.from,.to{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: var(--br);
+    border: 1px solid var(--secondary);
+    text-align: center;
+    font-weight: 600;
+}
+.input{
+    text-align: right;
+}
+.container>label{
+    display:block ;
+    margin-bottom: 10px;
+}
+.calc-btn{
+    width: 100%;
+    height: 100%;
+    border-radius: var(--br);
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--light);
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 5px 5px grey;
+}
+.calc-btn:active{
+    background-color: var(--primary-soft);
+}
+select:focus,input:focus,button:focus{
+    outline: none;
+}
+
+.history {
+    /*border-collapse: collapse;*/
+    width: 100%;
+    margin-top: 20px;
+}
+
+.history td, .history th {
+    padding: 8px;
+    border-radius: var(--br);
+}
+.history tr{
+    background-color: var(--secondary-soft);
+}
+/*.history tr:nth-child(even){background-color: var(--secondary-soft);}*/
+
+.history tr:hover {background-color: #ddd;}
+
+.history th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary);
+    color: var(--light);
+}
+.history th:last-child{
+    text-align: right;
+}
+.history tr td:last-child{
+    text-align: center;
+}
+.history tr td:last-child:hover{
+    color: var(--light);
+    background-color: var(--primary-soft);
+    cursor: pointer;
+}
+#rowSpacer td{
+    text-align: center;
+}
+#rowSpacer>td:hover{
+    background-color: #ddd;
+    color: #707070;
+}
+.delButton{
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--light);
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 10px;
+    position: absolute;
+    right: 280px;
+    box-shadow: 0 5px 5px grey;
+    cursor: pointer;
+}
+
+.delButton:active{
+    background-color: var(--primary-soft);
+}
+.mode-change{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--dark);
+    position: absolute;
+    left: 283px;
+    cursor: pointer;
+
+}
+.mode-change>.fas.fa-moon{
+    color: var(--light);
+
+}
+@media screen and (max-width:1024px){
+    .app{
+        width: 90%;
+        margin: 30px auto;
+    }
+    .output{
+
+    }
+    .input,.from,.to{
+        width: 90%;
+    }
+    .delButton{
+        right: 48px;
+
+    }
+    .mode-change{
+        left: 60px
+    }
+}
+@media screen and (max-width: 480px) {
+    .app{
+        width: 90%;
+        margin:30px auto;
+    }
+    .output{
+        flex-flow: column;
+        align-items: flex-end;
+    }
+    .brand-container{
+        width: 100%;
+    }
+    .container{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .container>label{
+        margin-bottom: 5px;
+    }
+    .input{
+        text-align: left;
+    }
+    .calc{
+        flex-wrap: wrap;
+    }
+    .from-container,.to-container{
+        width: 46%;
+    }
+    .calc-btn{
+        padding: 15px;
+        box-shadow: 0 5px 5px grey;
+    }
+    .input,.from,.to{
+        padding: 10px ;
+    }
+    .history td{
+        padding: 10px 15px;
+        font-size: smaller;
+    }
+    .history th:last-child{
+        text-align: left;
+    }
+    .delButton{
+        right: 24px;
+        margin-bottom:10px;
+    }
+    .mode-change{
+        left: 25px;
+    }
+}
+
